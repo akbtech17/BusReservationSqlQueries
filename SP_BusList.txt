@@ -1,0 +1,25 @@
+USE [BusReservation]
+GO
+
+ 
+
+/****** Object:  StoredProcedure [dbo].[BusList]    Script Date: 25-08-2022 6.55.25 PM ******/
+SET ANSI_NULLS ON
+GO
+
+ 
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ 
+
+CREATE PROCEDURE [dbo].[BusList] 
+AS 
+BEGIN
+    SELECT  
+        B.BusId, B.BusNo, B.Rows, B.Cols, B.DTime, B.ATime, B.RouteId, B.Pickup, B.DriverContact, B.DriverName, B.SeatCost, B.TypeOfBus,
+        R.Source, R.Destination, R.Distance
+    FROM Bus B JOIN Route R ON B.RouteId = R.RouteId;
+End
+GO

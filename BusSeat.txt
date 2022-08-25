@@ -1,0 +1,39 @@
+USE [BusReservation]
+GO
+
+ 
+
+/****** Object:  Table [dbo].[BusSeat]    Script Date: 25-08-2022 6.54.20 PM ******/
+SET ANSI_NULLS ON
+GO
+
+ 
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ 
+
+CREATE TABLE [dbo].[BusSeat](
+    [SeatNo] [varchar](2) NULL,
+    [BusId] [int] NULL,
+    [Available] [bit] NULL
+) ON [PRIMARY]
+GO
+
+ 
+
+ALTER TABLE [dbo].[BusSeat] ADD  DEFAULT ((1)) FOR [Available]
+GO
+
+ 
+
+ALTER TABLE [dbo].[BusSeat]  WITH CHECK ADD FOREIGN KEY([BusId])
+REFERENCES [dbo].[Bus] ([BusId])
+GO
+
+ 
+
+ALTER TABLE [dbo].[BusSeat]  WITH CHECK ADD FOREIGN KEY([SeatNo])
+REFERENCES [dbo].[Seat] ([SeatNo])
+GO

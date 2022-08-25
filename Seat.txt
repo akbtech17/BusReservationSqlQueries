@@ -1,0 +1,26 @@
+USE [BusReservation]
+GO
+
+ 
+
+/****** Object:  Table [dbo].[Seat]    Script Date: 25-08-2022 6.55.00 PM ******/
+SET ANSI_NULLS ON
+GO
+
+ 
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ 
+
+CREATE TABLE [dbo].[Seat](
+    [SeatNo] [varchar](2) NOT NULL,
+    [Row] [int] NOT NULL,
+    [Col] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+    [SeatNo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
