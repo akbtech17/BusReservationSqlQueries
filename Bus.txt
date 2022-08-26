@@ -1,41 +1,22 @@
-USE [BusReservation]
-GO
-
- 
-
-/****** Object:  Table [dbo].[Bus]    Script Date: 25-08-2022 6.53.51 PM ******/
-SET ANSI_NULLS ON
-GO
-
- 
-
-SET QUOTED_IDENTIFIER ON
-GO
-
- 
-
 CREATE TABLE [dbo].[Bus](
-    [BusId] [int] NOT NULL,
+    [BusId] [int] NOT NULL primary key,
     [BusNo] [varchar](10) NOT NULL,
     [Rows] [int] NOT NULL,
     [Cols] [int] NOT NULL,
     [DTime] [datetime] NOT NULL,
     [ATime] [datetime] NULL,
-    [RouteId] [int] NULL,
     [Pickup] [varchar](50) NOT NULL,
     [SeatCost] [int] NOT NULL,
     [DriverName] [varchar](20) NULL,
     [DriverContact] [varchar](10) NULL,
     [TypeOfBus] [varchar](10) NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-    [BusId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
+    [Source] [varchar](10) NOT NULL,
+    [Destination] [varchar](10) NOT NULL,
+    [Distance] [int] NOT NULL,
+);
 
- 
+INSERT INTO Bus VALUES
+(1,'UK123',4,5,'1998-01-23 12:45:56','2010-12-31 01:15:00','Swargate',300,'Vibhor','1234567890','AC','Pune','Mumbai',200),
+(2,'UK124',4,5,'1998-01-23 12:45:56','2010-12-31 01:15:00','India Gate',600,'Mahalakshmi','0987654321','NON AC','Pune','Goa',600);
 
-ALTER TABLE [dbo].[Bus]  WITH CHECK ADD FOREIGN KEY([RouteId])
-REFERENCES [dbo].[Route] ([RouteId])
-GO
+SELECT * FROM BUS;
