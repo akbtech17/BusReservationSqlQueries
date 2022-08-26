@@ -1,0 +1,17 @@
+CREATE TABLE Customer(
+    [CustomerId] [int] primary key,
+    [FirstName] [varchar](10) NOT NULL,
+    [LastName] [varchar](15) NOT NULL,
+    [Dob] [datetime] ,
+    [Gender] [char](1) ,
+    [Mobile] [varchar](10) NOT NULL,
+    [Email] [varchar](25) NOT NULL,
+    [Password] [varchar](9) NOT NULL
+);
+
+INSERT INTO Customer VALUES(1, 'Rohit', 'Sharma', '1998-08-23 12:45:56', 'M', '9822992345', 'rohits@gmail.com', 'Rohit@123');
+INSERT INTO Customer VALUES(2, 'Virat', 'Kohli', '1994-02-23 12:45:56', 'M', '8845665754', 'viratk@gmail.com', 'Virat@123');
+INSERT INTO Customer VALUES(3, 'Anushka', 'Sharma', '1996-10-23 12:45:56', 'F', '9965412064', 'anushkas@gmail.com', 'Anushka@1');
+
+
+SELECT * FROM Customer;
